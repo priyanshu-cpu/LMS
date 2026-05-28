@@ -35,5 +35,5 @@ def login(request):
 def dashboard(request):
     return redirect(request, 'Lms/dashboard.html')
 
-def logout():
-    pass
+def logout(request):
+    logout(request)
