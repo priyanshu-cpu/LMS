@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import UserRegisterForm
 from .models import Books
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -29,3 +30,10 @@ def login(request):
         form = AuthenticationForm()
         
     return render(request,'Lms/login.html')
+
+@login_required
+def dashboard(request):
+    return redirect(request, 'Lms/dashboard.html')
+
+def logout():
+    pass
